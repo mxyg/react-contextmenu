@@ -1,0 +1,64 @@
+{
+  "name": "@liuman/react-contextmenu",
+  "version": "0.1.0",
+  "description": "A context menu that behaves: flips at viewport edges, never adds scrollbars, submenus flip too, long-press opens it on touch, Esc/outside-click closes it. No UI framework required.",
+  "type": "module",
+  "main": "./dist/react-contextmenu.js",
+  "module": "./dist/react-contextmenu.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/react-contextmenu.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "rm -rf dist && vite build && tsc -p tsconfig.build.json",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run type-check && npm run build",
+    "dev:demo": "vite --config demo/vite.config.ts",
+    "build:demo": "vite build --config demo/vite.config.ts"
+  },
+  "keywords": [
+    "react",
+    "context-menu",
+    "right-click",
+    "long-press",
+    "submenu",
+    "portal"
+  ],
+  "author": "刘满",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "styled-components": ">=6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^5.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "styled-components": "^6.1.0",
+    "typescript": "^5.3.0",
+    "vite": "^7.2.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mxyg/react-contextmenu.git"
+  },
+  "homepage": "https://mxyg.github.io/react-contextmenu/",
+  "bugs": {
+    "url": "https://github.com/mxyg/react-contextmenu/issues"
+  }
+}
